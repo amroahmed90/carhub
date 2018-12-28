@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+
+
+        <title>Car Hub Egypt | Home</title>
+
+        <style media="screen">
+            *{margin: 0px; padding: 0px;}
+            body{
+                background-image: url(images/bg.jpg);
+                background-repeat: repeat-y;
+                background-position: top;
+                background-size: 120%;
+            }
+            header{
+                background-image: url(images/header.jpg);
+                opacity: 0.9;
+                height: 90px;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-top: 10px;
+            }
+            div#main{
+                color: white;
+                margin: auto;
+                margin-top: 25px;
+                /*font-size: 18px;*/
+            }
+            div#main a{
+                text-decoration: none;
+                color: white;
+                /*font-size: 18px;*/
+            }
+            div#select{
+                background-color: gray;
+                padding: 5px;
+                border-radius: 5px;
+                position: absolute;
+                float: right;
+                right: 10px;
+                top: 25px;
+            }
+            div#select select{
+                padding: 5px;
+                border-radius: 3px;
+            }
+            div#select button{
+                padding: 2px;
+                background-color: #FFCC33;
+                border-radius: 3px;
+                font-weight: bold;
+                border-style: none;
+            }
+            div#login{
+                position: relative;
+                float: right;
+                top: 65px;
+                right: 90px;
+            }
+            div#login a{
+                /*font-size: 17px;*/
+                text-decoration: none;
+                color: yellow;
+                padding: 8px;
+            }
+            footer{
+                background-image: url(images/footer.jpg);
+                opacity: 0.9;
+                height: 90px;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                bottom: 10px;
+            }
+            div.footerA  ul{
+                padding-top: 10px;
+                padding-left: 30px;
+                color: white;
+                list-style: none;
+                font-size: 10px;
+            }
+            div.footerA  ul li a{
+                color: white;
+                font-size: 10px;
+            }
+            div.footerB h3{
+                text-align: left;;
+                margin-top: 10px;
+                margin-left:12px;
+                font-weight: bold;
+            }
+            img.contacts{
+                width: 30px;
+                height: 30px;
+                margin: 3px;
+                border-radius: 5px;
+            }
+            div#preview{
+                padding: 0px;
+                max-width: 960px;
+                max-height: 400px;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            img.img-responsive{
+                border: 2px solid white;
+                max-width: 960px;
+                max-height: 400px;
+                padding: 0;
+            }
+            ol.carousel-indicators{
+                position: absolute;
+                bottom: -35px;
+            }
+            div.carousel-caption{
+                border-radius: 5px;
+                margin: 0 auto;
+                color: yellow;
+                background-color: black;
+                opacity: 0.8;
+                bottom: 2px;
+                max-width: 300px;
+                max-height: 150px;
+                padding: 0px;
+            }
+            div#logo-container{
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+            div#logos{
+                align-self: center;
+                background-color: black;
+                opacity: 0.9;
+                border: 0.5px solid white;
+                max-width: 340px;
+                max-height: 100px;
+                overflow: auto;
+            }
+            div#logos a img{
+                max-width: 85px;
+                max-height: 85px;
+                border: 1px gray solid;
+                border-radius: 43px;
+                margin: 5px;
+            }
+            img#navArrowPrev{
+                position: absolute;
+                float: left;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                opacity: 0.7;
+                left: -5px;
+                top: 40px;
+            }
+            img#navArrowNext{
+                position: absolute;
+                float: right;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                opacity: 0.7;
+                right: 0px;
+                top: 40px;
+            }
+            img#navArrowPrev:hover{opacity: 1;}
+            img#navArrowNext:hover{opacity: 1;}
+            div#navigatePic img{
+                max-width: 900px;
+                max-height: 130px;
+                margin-left: 10px;
+            }
+            div#navigateTable table{
+                background-color: black;
+                opacity: 0.9;
+                color: yellow;
+                padding: 5px;
+            }
+            div#navigateTable th, td{
+                padding: 4px;
+            }
+            button#save{
+                background: #FFCC33;
+                border-style: none;
+                padding: 2px;
+                color: white;
+                border-radius: 5px;
+            }
+            div#details{
+                background: black;
+                opacity: 0.95;
+                padding: 5px;
+                margin: 5px auto;
+                text-align: center;
+            }
+            div#details a{
+                background: #FFCC33;
+                color: white;
+                padding: 5px;
+                margin: 5px auto;
+                text-align: center;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+            div#result img{
+                max-width: 500px;
+                max-height: 300px;
+                padding: 5px;
+            }
+            div#result table{
+                margin: 10px auto;
+                background-color: snow;
+                color: black;
+                width: 97%;
+            }
+            div#result table caption{
+                background-color: #FFCC33;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                width: 100%;
+            }
+            div#result table th{
+                padding: 5px;
+            }
+            tr.below{
+                border-bottom: 2px solid #FFCC33;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <header class="row">
+                <div class="col-xs-6 col-sm-4"></div>
+
+                <div class="col-xs-6 col-sm-4 text-center" id="main">
+                    <a href="#" class="home">Home</a> |
+                    <a href="#" class="cars">Cars</a> |
+                    <a href="#" id="supplies">Supplies&Services</a> |
+                    <a href="#" id="news">News</a> |
+                    <a href="#" id="contacts">Contact us</a>
+                </div>
+
+                <div class="col-xs-6 col-sm-4">
+                    <div id="select">
+                        <select id="selectMake" name="make" title="Select Make">
+                            <option>Select Make</option>
+                            <option>Mercedes</option>
+                            <option>BMW</option>
+                            <option>VoksWagen</option>
+                            <option>Toyota</option>
+                        </select>
+
+                        <select id="selectModel" name="model" title="Select Model">
+                            <option>Select Model</option>
+                        </select>
+
+                        <button type="button" name="go">GO</button>
+                    </div>
+                    <div id="login">
+                        <a href="#">Register</a>
+                        <a href="#">Login</a>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="row">
+                <div id="preview" class="col-md-6 col-md-offset-3">
+                    <div id="myCarousel" class="carousel slide">
+                         <ol class="carousel-indicators">
+                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                             <li data-target="#myCarousel" data-slide-to="1"></li>
+                             <li data-target="#myCarousel" data-slide-to="2"></li>
+                             <li data-target="#myCarousel" data-slide-to="3"></li>
+                             <li data-target="#myCarousel" data-slide-to="4"></li>
+                             <li data-target="#myCarousel" data-slide-to="5"></li>
+                         </ol>
+
+                         <div class="carousel-inner">
+
+                             <div class="item active">
+                                 <img src="images/car1.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 Mercedes-Benz C-Class</h4>
+                                     <p>L.E 400,000</p>
+                                 </div>
+                             </div>
+
+                             <div class="item">
+                                 <img src="images/car2.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 Mercedes-Benz GLA-Class</h4>
+                                     <p>L.E 300,000</p>
+                                 </div>
+                             </div>
+
+                             <div class="item">
+                                 <img src="images/car3.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 VolksWagen Passat</h4>
+                                     <p>L.E 210,000</p>
+                                 </div>
+                             </div>
+
+                             <div class="item">
+                                 <img src="images/car4.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 VolksWagen Golf</h4>
+                                     <p>L.E 187,000</p>
+                                 </div>
+                             </div>
+
+                             <div class="item">
+                                 <img src="images/car5.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 Audi A3</h4>
+                                     <p>L.E 282,500</p>
+                                 </div>
+                             </div>
+
+                             <div class="item">
+                                 <img src="images/car6.jpg" alt="N/A" class="img-responsive" />
+                                 <div class="carousel-caption">
+                                     <h4>2016 Honda Accord</h4>
+                                     <p>L.E 205,000</p>
+                                 </div>
+                             </div>
+
+                         </div>
+
+                         <a href="#myCarousel" class="carousel-control left" data-slide="prev"></a>
+                         <span class="icon-prev"></span>
+
+                         <a href="#myCarousel" class="carousel-control right" data-slide="next"></a>
+                         <span class="icon-next"></span>
+                    </div><!--end of div#myCarousel-->
+
+                    <div id="navigatePic" class="col-xs-6 hidden">
+                        <a href="#"><img id="navArrowPrev" src="images/previous.jpg" alt="" /></a>
+                        <img id="mainPic" src="images/car1.jpg" alt="" />
+                    </div> <!--end of div#navigatePic-->
+
+                    <div id="navigateTable" class="col-xs-6 hidden">
+                        <a href="#"><img id="navArrowNext" src="images/next.jpg" alt="" /></a>
+                        <table>
+                            <tr>
+                                <th>Price (L.E):</th>
+                                <td id="price">400,000</td>
+                            </tr>
+                            <tr>
+                                <th>Year:</th>
+                                <td id="year">2016</td>
+                            </tr>
+                            <tr>
+                                <th>Make:</th>
+                                <td id="make">Mercedes Benz</td>
+                            </tr>
+                            <tr>
+                                <th>Model:</th>
+                                <td id="model">C Class</td>
+                            </tr>
+                            <tr>
+                                <th>Type:</th>
+                                <td id="type">AMG</td>
+                            </tr>
+                        </table>
+                    </div><!--end of div#navigateTable-->
+
+                    <button type="button" name="save" id="save" class="center-block hidden">Save to Compare</button>
+
+                </div><!--end of div#preview-->
+            </div> <!--end of div.row-->
+
+            <div class="row">
+
+                <div class="col-md-6 col-md-offset-3" id="logo-container">
+                    <div class="col-md-6 col-md-offset-3" id="logos">
+                        <a href="#" id="mercedes"><img src="images/logo1.jpg" alt="" /></a>
+                        <a href="#" id="volkswagen"><img src="images/logo2.jpg" alt="" /></a>
+                        <a href="#" id="audi"><img src="images/logo3.jpg" alt="" /></a>
+                        <a href="#" id="honda"><img src="images/logo4.jpg" alt="" /></a>
+                    </div><!--end of div#logos-->
+
+                    <div id="details" class="center-block hidden">
+                        <a href="#" id="a">Photos</a>
+                        <a href="#" id="b">Features&Specs</a>
+                        <a href="#" id="c">Weight&Dimention</a>
+                        <a href="#" id="d">Performance</a>
+                        <a href="#" id="e">Safety</a>
+                        <a href="#" id="f">Features</a>
+                        <div id="result">
+                            <img id="imgResult" src="images/car1.jpg" alt=""/>
+                            <table id="performance" class="hidden">
+                                <caption>Performance</caption>
+                                <tr class="below">
+                                    <th>Top Speed</th>
+                                    <td id="first"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Acceleration 0-100kph</th>
+                                    <td id="second"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Deceleration 100-0 kph</th>
+                                    <td id="third"></td>
+                                </tr>
+                                <tr>
+                                    <th>Lateral Acceleration</th>
+                                    <td id="forth"></td>
+                                </tr>
+                            </table>
+
+                            <table id="features" class="hidden">
+                                <caption>Features&Specs</caption>
+                                <tr class="below">
+                                    <th>Feul Tank</th>
+                                    <td id="first"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Transition Mode</th>
+                                    <td id="second"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Colors</th>
+                                    <td id="third"></td>
+                                </tr>
+                                <tr>
+                                    <th>Feul Consumption</th>
+                                    <td id="forth"></td>
+                                </tr>
+                            </table>
+
+                            <table id="weight" class="hidden">
+                                <caption>Weight&Dimention</caption>
+                                <tr class="below">
+                                    <th>Wegiht</th>
+                                    <td id="first"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Hieght</th>
+                                    <td id="second"></td>
+                                </tr>
+                                <tr class="below">
+                                    <th>Width</th>
+                                    <td id="third"></td>
+                                </tr>
+                                <tr>
+                                    <th>Length</th>
+                                    <td id="forth"></td>
+                                </tr>
+                            </table>
+
+                            <table id="safety" class="hidden">
+                                <caption>Safety</caption>
+                                <tr class="below">
+                                    <th>Brakes Type</th>
+                                    <td id="first"></td>
+                                </tr>
+                                <tr>
+                                    <th>Airbags</th>
+                                    <td id="second"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div><!--end of div#details-->
+                </div><!--end of div#logo-container-->
+
+            </div><!--end of div.row-->
+
+
+            <footer class="row">
+                <div class="col-xs-6 col-sm-3 footerA">
+                    <ul>
+                        <li>> <a href="#" class="home">Home</a></li>
+                        <li>> <a href="#" class="cars">Cars</a></li>
+                        <li>> <a href="#">Supplies&SErvices</a></li>
+                        <li>> <a href="#">News</a></li>
+                        <li>> <a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-3"></div>
+                <div class="col-xs-6 col-sm-3"></div>
+                <div class="col-xs-6 col-sm-3 footerB">
+                    <h3>Contact Us</h3>
+                    <a href="#"><img style="left:10px" class="contacts" src="images/contact1.png" alt="FB" /></a>
+                    <a href="#"><img class="contacts" src="images/contact2.png" alt="FB" /></a>
+                    <a href="#"><img class="contacts" src="images/contact3.jpg" alt="FB" /></a>
+                    <a href="#"><img class="contacts" src="images/contact4.png" alt="FB" /></a>
+                </div>
+            </footer>
+
+        </div>
+
+        <script>
+            var car1 = {
+                classification: "Sedan",
+                price: 400000,
+                assembly: "United Arab Emirates",
+                year: 2016,
+                make: "Mercedes Benz",
+                model: "C Class",
+                type: 'AMG',
+                tank: 68,
+                consumption: 15,
+                transmission:  'Automatic',
+                color: "White, Brown, Red",
+                photo: "images/car1.jpg"
+            };
+
+            var car2 = {
+                classification: "SUV",
+                price: 300000,
+                assembly: "United Arab Emirates",
+                year: 2016,
+                make: "Mercedes Benz",
+                model: "GLA Class",
+                type: 'GLA',
+                tank: 56,
+                consumption: 15,
+                transmission:  'Automatic',
+                color: "Black, Silver",
+                photo: "images/car2.jpg"
+            };
+
+            var car3 = {
+                classification: "Sedan",
+                price: 210000,
+                assembly: "Turkey",
+                year: 2016,
+                make: "VolksWagen",
+                model: "Passat",
+                type: 'Lux',
+                tank: 70,
+                consumption: 16,
+                transmission:  'Automatic',
+                color: "Black, White, Silver",
+                photo: "images/car3.jpg"
+            };
+
+            var car4 = {
+                classification: "HB",
+                price: 187000,
+                assembly: "Turkey",
+                year: 2016,
+                make: "VolksWagen",
+                model: "Golf",
+                type: 'GLX',
+                tank: 50,
+                consumption: 15.73,
+                transmission:  'Automatic',
+                color: "Blue, Red, Silver",
+                photo: "images/car4.jpg"
+            };
+
+            var car5 = {
+                classification: "Sedan",
+                price: 282500,
+                assembly: "Egypt",
+                year: 2016,
+                make: "Audi",
+                model: "A3",
+                type: 'FED',
+                tank: 50,
+                consumption: 14,
+                transmission:  'Automatic',
+                color: "Brown, White",
+                photo: "images/car5.jpg"
+            };
+
+            var car6 = {
+                classification: "Sedan",
+                price: 205000,
+                assembly: "Egypt",
+                year: 2016,
+                make: "Honda",
+                model: "Accord",
+                type: 'LX',
+                tank: 65.1,
+                consumption: 14.45,
+                transmission:  'Manual',
+                color: "Black, Silver",
+                photo: "images/car6.jpg"
+            };
+
+            $('.home').click(function () {
+                $('#myCarousel').removeClass('hidden');
+                $('#logos').removeClass('hidden');
+                $('#save').addClass('hidden');
+                $('#details').addClass('hidden');
+                $('#navigatePic').addClass('hidden');
+                $('#navigateTable').addClass('hidden');
+            })
+
+            $('.cars').click(function () {
+                $('#navigatePic').removeClass('hidden')
+                $('#navigateTable').removeClass('hidden')
+                $('#save').removeClass('hidden');
+                $('#details').removeClass('hidden');
+                $('#myCarousel').addClass('hidden');
+                $('#logos').addClass('hidden');
+            })
+
+            $('#a').on('click',function () {
+                $('#imgResult').removeClass('hidden');
+                $('#features').addClass('hidden');
+                $('#weight').addClass('hidden');
+                $('#performance').addClass('hidden');
+                $('#safety').addClass('hidden');
+            })
+
+            $('#b').on('click',function () {
+                $('#imgResult').addClass('hidden');
+                $('#features').removeClass('hidden');
+                $('#weight').addClass('hidden');
+                $('#performance').addClass('hidden');
+                $('#safety').addClass('hidden');
+            })
+
+            $('#c').on('click',function () {
+                $('#imgResult').addClass('hidden');
+                $('#features').addClass('hidden');
+                $('#weight').removeClass('hidden');
+                $('#performance').addClass('hidden');
+                $('#safety').addClass('hidden');
+            })
+
+            $('#d').on('click',function () {
+                $('#imgResult').addClass('hidden');
+                $('#features').addClass('hidden');
+                $('#weight').addClass('hidden');
+                $('#performance').removeClass('hidden');
+                $('#safety').addClass('hidden');
+            })
+
+            $('#e').on('click',function () {
+                $('#imgResult').addClass('hidden');
+                $('#features').addClass('hidden');
+                $('#weight').addClass('hidden');
+                $('#performance').addClass('hidden');
+                $('#safety').removeClass('hidden');
+            })
+
+            $('#f').on('click',function () {
+                $('#imgResult').addClass('hidden');
+                $('#features').removeClass('hidden');
+                $('#weight').addClass('hidden');
+                $('#performance').addClass('hidden');
+                $('#safety').addClass('hidden');
+            })
+
+            var carsArr = [car1,car2,car3,car4,car5,car6];
+
+            $('#navArrowNext').on('click',function() {
+                var currentStr = $('#mainPic').attr('src');
+                var nextObj;
+                for (var i = 0; i < carsArr.length; i++) {
+                    if(carsArr[i]['photo']==currentStr){nextObj=carsArr[i+1];}
+                }
+                $('#mainPic').attr('src', nextObj['photo']);
+                $('td#price').text(nextObj['price']);
+                $('td#year').text(nextObj['year']);
+                $('td#make').text(nextObj['make']);
+                $('td#model').text(nextObj['model']);
+                $('td#type').text(nextObj['type']);
+
+            })
+
+            $('#navArrowPrev').on('click',function() {
+                var currentStr = $('#mainPic').attr('src');
+                var prevObj;
+                for (var i = 0; i < carsArr.length; i++) {
+                    if(carsArr[i]['photo']==currentStr){prevObj=carsArr[i-1];}
+                }
+                $('#mainPic').attr('src', prevObj['photo']);
+                $('td#price').text(prevObj['price']);
+                $('td#year').text(prevObj['year']);
+                $('td#make').text(prevObj['make']);
+                $('td#model').text(prevObj['model']);
+                $('td#type').text(prevObj['type']);
+
+            })
+
+        </script>
+    </body>
+</html>
